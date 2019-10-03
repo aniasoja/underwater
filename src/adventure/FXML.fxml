@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="parentContainer" onSwipeUp="#loadSecond" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adventure.Scene1_Controller">
+   <children>
+      <Text onMouseClicked="#loadSecond" strokeType="OUTSIDE" strokeWidth="0.0" text="UNDERWATER ADVENTURE" wrappingWidth="147.087890625" StackPane.alignment="TOP_CENTER">
+         <StackPane.margin>
+            <Insets top="50.0" />
+         </StackPane.margin></Text>
+      <AnchorPane fx:id="anchorRoot" onSwipeUp="#loadSecond" prefHeight="301.0" prefWidth="300.0">
+         <children>
+            <Button fx:id="button" layoutX="115.0" layoutY="230.0" mnemonicParsing="false" onAction="#loadSecond" text="Button" />
+         </children></AnchorPane>
+   </children>
+</StackPane>
