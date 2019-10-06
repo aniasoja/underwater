@@ -13,6 +13,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("FXML.fxml"));
 
         Scene scene = new Scene(root);
+        scene.getStylesheets().add("https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap");
         stage.setScene(scene);
         stage.setTitle("Underwater adventure");
         stage.show();
