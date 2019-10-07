@@ -24,27 +24,25 @@ import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 
-public class Scene1_Controller implements Initializable {
+public class Scene2_Controller2 implements Initializable {
 
-    @FXML
-    private Button button;
     @FXML
     private AnchorPane anchorRoot;
     @FXML
+    private AnchorPane newRoot;
+    @FXML
     private StackPane parentContainer;
     @FXML
-    private Text text;
-    @FXML
-    private Text title;
+    private Text text2;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     }
-
+    
     @FXML
-    private void loadSecond(MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("FXML2.fxml"));
-        Scene scene = text.getScene();
+    private void loadThird(MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("ChooseChar.fxml"));
+        Scene scene = text2.getScene();
         root.translateYProperty().set(scene.getHeight());
 
         parentContainer.getChildren().add(root);
@@ -54,10 +52,9 @@ public class Scene1_Controller implements Initializable {
         KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
         timeline.getKeyFrames().add(kf);
         timeline.setOnFinished(t -> {
-            parentContainer.getChildren().remove(anchorRoot);
+            parentContainer.getChildren().remove(newRoot);
         });
         timeline.play();
     }
-
 
 }
