@@ -3,8 +3,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="newRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseReleased="#loadThird" onSwipeUp="#loadThird" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adventure.Scene2_Controller2">
-   <children>
-      <Text fx:id="text2" layoutX="57.0" layoutY="270.0" onMouseDragExited="#loadThird" strokeType="OUTSIDE" strokeWidth="0.0" text="very long text 2 very long text 2 very long text 2 very long text 2 very long text 2 very long text 2 very long text 2 very long text 2" wrappingWidth="186.03314208984375" />
-   </children>
+<AnchorPane fx:id="newRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#position" onMouseDragged="#loadThird" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adventure.Scene2_Controller2">
+   	<children>
+     	<Text fx:id="text2" layoutX="57.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="very long text 2 very long text 2 very long text 2 very long text 2 very long text 2 very long text 2 very long text 2 very long text 2" wrappingWidth="186.03314208984375" />
+   	</children>
 </AnchorPane>
