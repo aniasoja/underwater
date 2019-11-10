@@ -3,8 +3,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="newRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#position" onMouseDragged="#loadThird" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adventure.Scene2_Controller2">
+<AnchorPane fx:id="anchorRoot2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#position" onMouseDragged="#loadNextText" prefHeight="298.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adventure.Scene1_Controller">
    	<children>
-     	<Text fx:id="text2" layoutX="57.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="very long text 2 very long text 2 very long text 2 very long text 2 very long text 2 very long text 2 very long text 2 very long text 2" wrappingWidth="186.03314208984375" />
+     	<Text fx:id="text" layoutX="-50.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DOLPHIN WAS WINNING AGAIN, BECAUSE HE COULD BOUNCE ANY BALL, EVEN JUMPING ABOVE WATER, TRITON WAS DESTROYING OBSTACLES ON HIS WAY TO GET TO THE BALL AND THE OCTOPUS GOT ENTANGLED IN HIS OWN TENTACTES EVERY SINGLE TIME HE LOOKED AT THE MERMAID, BECSAUSE HE HAD SERIOUS CRUSH ON HER." textOrigin="CENTER" wrappingWidth="400.4332275390625" />
    	</children>
 </AnchorPane>

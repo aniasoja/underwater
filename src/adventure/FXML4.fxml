@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="anchorRoot4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#position" onMouseDragged="#loadNextText" prefHeight="298.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adventure.Scene1_Controller">
+   	<children>
+     	<Text fx:id="text" layoutX="57.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FRIENDS TRIED TO CALM HIM DOWN, BUT IN THE NOISE THEY DIDN'T HEAR DEADLY SHARK COMING CLOSE." wrappingWidth="186.03314208984375" />
+   	</children>
+</AnchorPane>

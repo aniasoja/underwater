@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="anchorRoot3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#position" onMouseDragged="#loadNextText" prefHeight="298.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adventure.Scene1_Controller">
+   	<children>
+     	<Text fx:id="text" layoutX="57.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HE GOT MAD AND STARTED SHOUTING AT HIS FRIENDS. 'I DON'T LIKE YOU ANYMORE! YOU ARE NOT MY REAL FRIENDS!' - HE STARTED CRYING REALLY LOUDLY!" wrappingWidth="186.03314208984375" />
+   	</children>
+</AnchorPane>

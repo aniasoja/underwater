@@ -4,14 +4,29 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="238.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adventure.Scene1_Controller">
+<AnchorPane fx:id="root2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#position" onMouseDragged="#loadNext" prefHeight="400.0" prefWidth="238.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adventure.Scene3_Controller3">
    <children>
-      <ImageView fitHeight="192.0" fitWidth="200.0" layoutX="19.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
+      <Button layoutX="23.0" layoutY="343.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="192.0" text="Button" />
+      <StackPane fx:id="seahorse" layoutX="35.0" layoutY="102.0" prefHeight="196.0" prefWidth="167.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Desktop/seahorse.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <ImageView fx:id="rightArrow" fitHeight="95.0" fitWidth="80.0" layoutX="174.0" layoutY="150.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" rotate="90.0">
          <image>
-            <Image url="@../../../../Desktop/seahorse.jpg" />
+            <Image url="@../../../../Downloads/kisspng-computer-icons-clip-art-5af613404dfa74.4673615015260762243194.png" />
          </image>
       </ImageView>
-      <Button layoutX="23.0" layoutY="343.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="192.0" text="Button" />
+      <ImageView fx:id="leftArrow" fitHeight="150.0" fitWidth="80.0" layoutX="-17.0" layoutY="150.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" rotate="270.0">
+         <image>
+            <Image url="@../../../../Downloads/kisspng-computer-icons-clip-art-5af613404dfa74.4673615015260762243194.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

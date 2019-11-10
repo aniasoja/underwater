@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="anchorRoot6" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#position" onMouseDragged="#loadNextText" prefHeight="298.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adventure.Scene1_Controller">
+   	<children>
+     	<Text fx:id="text" layoutX="57.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="‘OH NO!’ - THOUGHT OCTOPUS. ‘MY FRIENDS COULD BE IN A SERIOUS DANGER AND THEY BELIEVE I DON'T LIKE THEM! I NEED TO FIND THEM!’" wrappingWidth="186.03314208984375" />
+   	</children>
+</AnchorPane>
