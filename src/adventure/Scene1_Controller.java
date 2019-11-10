@@ -59,10 +59,8 @@ public class Scene1_Controller implements Initializable {
     }
     @FXML
     private void position(MouseEvent event) {
-    	System.out.println(text.getParent().getParent().getChildrenUnmodifiable());
     	Node level2 = text.getParent().getParent().getChildrenUnmodifiable().get(3);
     	Text level = (Text) level2;
-    	System.out.println(level.getText());
     	
     	if(level.getText() == "") {
     		level.setText("0");
@@ -80,14 +78,11 @@ public class Scene1_Controller implements Initializable {
     		if(level.getText().equals("0")) {
     			Parent root = FXMLLoader.load(getClass().getResource("FXML2.fxml"));
     			done = false;
-    			System.out.println(4);
     			loadStory(root, anchorRoot1, level);
     		}
     		else if(level.getText().equals("1")) {
-    			System.out.println(3);
     			Parent root = FXMLLoader.load(getClass().getResource("FXML3.fxml"));
     			done = false;
-    			System.out.println(2);
     			loadStory(root, anchorRoot2, level);
     		}
     		else if(level.getText().equals("2")) {
@@ -104,6 +99,11 @@ public class Scene1_Controller implements Initializable {
     			Parent root = FXMLLoader.load(getClass().getResource("FXML6.fxml"));
     			done = false;
     			loadStory(root, anchorRoot5, level);
+    		}
+    		else if(level.getText().equals("5")) {
+    			Parent root = FXMLLoader.load(getClass().getResource("ChooseChar.fxml"));
+    			done = false;
+    			loadStory(root, anchorRoot6, level);
     		}
     		
     	}
