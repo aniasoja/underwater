@@ -102,8 +102,32 @@ public class Scene1_Controller implements Initializable {
     		}
     		else if(level.getText().equals("5")) {
     			Parent root = FXMLLoader.load(getClass().getResource("ChooseChar.fxml"));
-    			done = false;
-    			loadStory(root, anchorRoot6, level);
+    			parentContainer = (StackPane) text.getParent().getParent();
+    			Scene scene = anchorRoot6.getScene();
+    			Node sp = root.getChildrenUnmodifiable().get(0);
+    			sp.translateYProperty().set(scene.getHeight());
+
+    			parentContainer.getChildren().remove(1);
+	        	parentContainer.getChildren().remove(1);
+    			parentContainer.getChildren().add(0, root);
+    			
+    			
+    	        Timeline timeline = new Timeline();
+    	        KeyValue kv0 = new KeyValue(anchorRoot6.translateYProperty(), -400, Interpolator.LINEAR);
+    			KeyFrame kf0 = new KeyFrame(Duration.seconds(1), kv0);
+    	        KeyValue kv1 = new KeyValue(sp.translateYProperty(), 0, Interpolator.LINEAR);
+    	        KeyFrame kf1 = new KeyFrame(Duration.seconds(1), kv1);
+    	        timeline.getKeyFrames().addAll(kf0, kf1);
+    	        timeline.setOnFinished(t -> {
+    	        	parentContainer.getChildren().remove(1);
+    	        	String b = level.getText();
+    	        	a = Integer.parseInt(b) + 1;
+    	        	b = String.valueOf(a);
+    	        	level.setText(b);
+    	        	System.out.println(level.getText());
+    	        });
+    	        timeline.play();
+    	        done = true;
     		}
     		
     	}
@@ -111,7 +135,6 @@ public class Scene1_Controller implements Initializable {
     @FXML
     private void loadStory(Parent root, AnchorPane anchorRoot, Text level) {
     	parentContainer = (StackPane) text.getParent().getParent();
-    	//parentContainer.setAlignment(Pos.CENTER);
 		Scene scene = anchorRoot.getScene();
 		scene.getStylesheets().add("https://fonts.googleapis.com/css?family=Chelsea+Market&display=swap");
 		Node text2 = root.getChildrenUnmodifiable().get(0);

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<StackPane fx:id="dolphin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adventure.Scene2_Controller2">
+   <children>
+      <ImageView fitHeight="550.0" fitWidth="550.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+         <image>
+            <Image url="@../../resources/hero3.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="name" fill="#5116c4" strokeType="OUTSIDE" strokeWidth="0.0" text="ROSEMARY" wrappingWidth="166.59607243537903" StackPane.alignment="CENTER_RIGHT">
+         <StackPane.margin>
+            <Insets bottom="30.0" right="50.0" />
+         </StackPane.margin>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="description" fill="#5115c4" strokeType="OUTSIDE" strokeWidth="0.0" text="SHE CAN JUMP OVER OBSTACLES." wrappingWidth="167.28436255455017" StackPane.alignment="CENTER_RIGHT">
+         <StackPane.margin>
+            <Insets right="50.0" top="30.0" />
+         </StackPane.margin>
+      </Text>
+   </children>
+</StackPane>

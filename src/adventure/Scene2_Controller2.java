@@ -22,74 +22,100 @@ import javafx.scene.image.ImageView;
 
 
 public class Scene2_Controller2 implements Initializable {
+	@FXML
+    private AnchorPane anchorRoot6;
     @FXML
-    private AnchorPane newRoot;
+    private StackPane triton;
     @FXML
-    private Text text2;
+    private StackPane octopus;
+    @FXML
+    private StackPane dolphin;
+    @FXML
+    private StackPane mermaid;
     @FXML
     private ImageView leftArrow;
     @FXML
     private ImageView rightArrow;
-    
-    
-    private double Y;
-    boolean done = false;
-    int level = 0;
-   
-    
+    @FXML
+    private Text description;
+    @FXML
+    private Text name;
+
+	private double X;
+	
+	int level;            // need work to decide!
+	int level_now;        //
+	boolean done = false;
+	
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    	
     }
     
     @FXML
     private void position(MouseEvent event) {
-    	Y = event.getY();
+    	X = event.getX();
+    	System.out.println(X);
+    	StackPane parentContainer = ((StackPane) anchorRoot6.getParent());
+    	System.out.println(parentContainer.getChildrenUnmodifiable());
+    	System.out.println(anchorRoot6.getChildren());
     }
     
     @FXML
-    private void loadThird(MouseEvent event) throws IOException {
-    	StackPane parentContainer = ((StackPane) newRoot.getParent());
-    	if(Y-event.getY()>100 && done == false) {
-	    	
-	        Parent root2 = FXMLLoader.load(getClass().getResource("ChooseChar.fxml"));
-	        Scene scene = newRoot.getScene();
-	        root2.translateYProperty().set(scene.getHeight());
-	
-	        parentContainer.getChildren().add(root2);
-	        
-	        /*
-	        if(this.getClass() == Scene2_Controller) {
-	        	root2.getChildrenUnmodifiable().get(3).setOpacity(0.0);
-	    	}
-	    	*/
-    		
-	        Timeline timeline = new Timeline();
-	        KeyValue kv0 = new KeyValue(newRoot.translateYProperty(), -400, Interpolator.LINEAR);
-    		KeyFrame kf0 = new KeyFrame(Duration.seconds(1), kv0);
-	        KeyValue kv1 = new KeyValue(root2.translateYProperty(), 0, Interpolator.LINEAR);
-	        KeyFrame kf1 = new KeyFrame(Duration.seconds(1), kv1);
-	        timeline.getKeyFrames().addAll(kf0, kf1);
-	        timeline.setOnFinished(t -> {
-	        	parentContainer.getChildren().remove(newRoot);
-	        });
-	        timeline.play();
-	        done = true;
-	        
-	        /*
-	        Timeline timeline = new Timeline();
-	        KeyValue kv = new KeyValue(root2.translateYProperty(), 0, Interpolator.EASE_IN);
-	        KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
-	        KeyValue kv1 = new KeyValue(text2.translateYProperty(), -200, Interpolator.EASE_IN);
-	        KeyFrame kf1 = new KeyFrame(Duration.seconds(1), kv1);
-	        KeyValue kv2 = new KeyValue(text2.opacityProperty(), 1.0);
-	        KeyFrame kf2 = new KeyFrame(Duration.seconds(1), kv2);
-	        timeline.getKeyFrames().addAll(kf, kf1, kf2);
-	        timeline.setOnFinished(t -> {
-	        	parentContainer.getChildren().remove(newRoot);
-	        });
-	        timeline.play();
-	        */
-	    }
+    private void loadNext(MouseEvent event) throws IOException {
+    if(X - event.getX()>75 && done == false) {
+        StackPane octopus = FXMLLoader.load(getClass().getResource("ChooseChar2.fxml"));
+        Scene scene = triton.getScene();
+        octopus.translateXProperty().set(scene.getWidth());
+        octopus.setTranslateY(70);
+
+        anchorRoot6.getChildren().add(octopus);
+        
+        if(level<level_now) {
+        	octopus.setDisable(true);
+        }
+
+        Timeline timeline = new Timeline();
+        KeyValue kv0 = new KeyValue(triton.translateXProperty(), -400, Interpolator.LINEAR);
+		KeyFrame kf0 = new KeyFrame(Duration.seconds(1), kv0);
+        KeyValue kv1 = new KeyValue(octopus.translateXProperty(), 0, Interpolator.LINEAR);
+        //KeyValue kv0a = new KeyValue(octopus.translateYProperty(), 100, Interpolator.LINEAR);
+        KeyFrame kf1 = new KeyFrame(Duration.seconds(1), kv1);
+        timeline.getKeyFrames().addAll(kf0, kf1);
+        timeline.setOnFinished(t -> {
+        	anchorRoot6.getChildren().remove(triton);
+        });
+        timeline.play();
+        done = true;
+    	}
+    else if(X - event.getX()<75 && done == false) {
+        StackPane seahorse = FXMLLoader.load(getClass().getResource("ChooseChar.fxml"));
+        Scene scene = octopus.getScene();
+        seahorse.translateXProperty().set(scene.getWidth());
+        //seahorse.setTranslateY(70);
+
+        anchorRoot6.getChildren().add(seahorse);
+        
+        if(level<level_now) {
+        	seahorse.setDisable(true);
+        }
+
+        Timeline timeline = new Timeline();
+        KeyValue kv0 = new KeyValue(octopus.translateXProperty(), -400, Interpolator.LINEAR);
+		KeyFrame kf0 = new KeyFrame(Duration.seconds(1), kv0);
+        KeyValue kv1 = new KeyValue(seahorse.translateXProperty(), 0, Interpolator.LINEAR);
+        //KeyValue kv0a = new KeyValue(octopus.translateYProperty(), 100, Interpolator.LINEAR);
+        KeyFrame kf1 = new KeyFrame(Duration.seconds(1), kv1);
+        timeline.getKeyFrames().addAll(kf0, kf1);
+        timeline.setOnFinished(t -> {
+        	anchorRoot6.getChildren().remove(octopus);
+        });
+        timeline.play();
+        done = true;
+    	}
+    }
+    
+    @FXML
+    private void loadMaze(MouseEvent event) throws IOException{
+    	//load the maze
     }
 }
