@@ -3,14 +3,23 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="anchorRoot6" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#position" onMouseDragged="#loadNext" prefHeight="1000.0" prefWidth="1900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adventure.Scene2_Controller2">
+<StackPane fx:id="parentContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1900.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adventure.Scene2_Controller2">
    <children>
-      <StackPane fx:id="octopus" layoutX="400.0" layoutY="9.0" prefHeight="982.0" prefWidth="1225.0">
+      <ImageView fx:id="leftArrow" fitHeight="150.0" fitWidth="80.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" x="20.0" StackPane.alignment="CENTER_RIGHT">
+         <image>
+            <Image url="@../../../../Downloads/resource%20copy/resource%20copy%20—%20kopia/hbtn1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rightArrow" fitHeight="95.0" fitWidth="80.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" rotate="180.0" StackPane.alignment="CENTER_LEFT">
+         <image>
+            <Image url="@../../../../Downloads/resource%20copy/resource%20copy%20—%20kopia/hbtn1.png" />
+         </image>
+      </ImageView>
+      <StackPane fx:id="octopus" maxHeight="-Infinity" maxWidth="-Infinity" onDragDetected="#position" onMouseDragged="#loadNext" prefHeight="982.0" prefWidth="1200.0" StackPane.alignment="CENTER">
          <children>
             <Text fx:id="name" fill="#b378b7" strokeType="OUTSIDE" strokeWidth="0.0" text="OLIVER" wrappingWidth="194.58972787857056" StackPane.alignment="CENTER_RIGHT">
                <StackPane.margin>
@@ -32,15 +41,5 @@
             </ImageView>
          </children>
       </StackPane>
-      <ImageView fx:id="leftArrow" fitHeight="150.0" fitWidth="80.0" layoutX="-6.0" layoutY="460.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" rotate="180.0" x="20.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="1806.0">
-         <image>
-            <Image url="@../../../../Downloads/resource%20copy/resource%20copy%20—%20kopia/hbtn1.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="rightArrow" fitHeight="95.0" fitWidth="80.0" layoutX="1806.0" layoutY="460.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../Downloads/resource%20copy/resource%20copy%20—%20kopia/hbtn1.png" />
-         </image>
-      </ImageView>
    </children>
-</AnchorPane>
+</StackPane>

@@ -1,6 +1,7 @@
 package adventure;
 
 import java.io.IOException;
+import javafx.scene.shape.Circle;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.animation.Interpolator;
@@ -23,21 +24,29 @@ import javafx.util.Duration;
 public class Scene3_Controller3 implements Initializable {
 
     @FXML
-    private AnchorPane root2;
+    private Circle a;
     @FXML
-    private StackPane seahorse;
+    private Circle b;
     @FXML
-    private StackPane octopus;
+    private Circle c;
     @FXML
-    private ImageView leftArrow;
+    private Circle d;
     @FXML
-    private ImageView rightArrow;
+    private Circle main;
 
 	private double X;
+	private double Y;
 	
-	int level;            // need work to decide!
-	int level_now;        //
-	boolean done = false;
+	boolean check1 = false;
+	boolean check2;
+	boolean check3;
+	boolean check4;
+	/*
+	 * 212.0 218.0
+	 * 236.0 109.0
+	 * 351.0 111.0
+	 * 381.0 200.0
+	 */
 	
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -46,68 +55,58 @@ public class Scene3_Controller3 implements Initializable {
     @FXML
     private void position(MouseEvent event) {
     	X = event.getX();
-    	System.out.println(X);
-    	StackPane parentContainer = ((StackPane) root2.getParent());
-    	System.out.println(parentContainer.getChildrenUnmodifiable());
-    	System.out.println(root2.getChildren());
-    }
-    
-    @FXML
-    private void loadNext(MouseEvent event) throws IOException {
-    if(X - event.getX()>75 && done == false) {
-        StackPane octopus = FXMLLoader.load(getClass().getResource("ChooseChar2.fxml"));
-        Scene scene = seahorse.getScene();
-        octopus.translateXProperty().set(scene.getWidth());
-        octopus.setTranslateY(70);
-
-        root2.getChildren().add(octopus);
-        
-        if(level<level_now) {
-        	octopus.setDisable(true);
-        }
-
-        Timeline timeline = new Timeline();
-        KeyValue kv0 = new KeyValue(seahorse.translateXProperty(), -400, Interpolator.LINEAR);
-		KeyFrame kf0 = new KeyFrame(Duration.seconds(1), kv0);
-        KeyValue kv1 = new KeyValue(octopus.translateXProperty(), 0, Interpolator.LINEAR);
-        //KeyValue kv0a = new KeyValue(octopus.translateYProperty(), 100, Interpolator.LINEAR);
-        KeyFrame kf1 = new KeyFrame(Duration.seconds(1), kv1);
-        timeline.getKeyFrames().addAll(kf0, kf1);
-        timeline.setOnFinished(t -> {
-        	root2.getChildren().remove(seahorse);
-        });
-        timeline.play();
-        done = true;
+    	Y = event.getY();
+    	
+    	if(X < 150 || X > 450) {
+    		if(Y < 55 || Y > 300) {
+    			check1 = false;
+    			check2 = false;
+    			check3 = false;
+    			check4 = false;
+    			System.out.println("all gone");
+    		}
     	}
-    else if(X - event.getX()<75 && done == false) {
-        StackPane seahorse = FXMLLoader.load(getClass().getResource("ChooseChar.fxml"));
-        Scene scene = octopus.getScene();
-        seahorse.translateXProperty().set(scene.getWidth());
-        //seahorse.setTranslateY(70);
-
-        root2.getChildren().add(seahorse);
-        
-        if(level<level_now) {
-        	seahorse.setDisable(true);
-        }
-
-        Timeline timeline = new Timeline();
-        KeyValue kv0 = new KeyValue(octopus.translateXProperty(), -400, Interpolator.LINEAR);
-		KeyFrame kf0 = new KeyFrame(Duration.seconds(1), kv0);
-        KeyValue kv1 = new KeyValue(seahorse.translateXProperty(), 0, Interpolator.LINEAR);
-        //KeyValue kv0a = new KeyValue(octopus.translateYProperty(), 100, Interpolator.LINEAR);
-        KeyFrame kf1 = new KeyFrame(Duration.seconds(1), kv1);
-        timeline.getKeyFrames().addAll(kf0, kf1);
-        timeline.setOnFinished(t -> {
-        	root2.getChildren().remove(octopus);
-        });
-        timeline.play();
-        done = true;
+    	if(check1 == false) {
+        	if(X > 190.0 && X < 234 &&Y > 195 && Y < 240) {
+        		check1 = true;
+            	check2 = false;
+            	System.out.print("1");
+        	}
+    	} else if(check2 == false) {
+        	if(X > 210 && X < 260 && Y > 85 && Y < 135) {
+        		check2 = true;
+        		check3 = false;
+        		System.out.print("2");
+        	}
+        } else if (check3 == false) {
+        	if(X > 325 && X < 375 && Y > 90 && Y < 135) {
+        		check3 = true;
+        		check4 = false;
+        		System.out.print("3");
+        	}
+    	} else if(check4 == false) {
+    		if(X > 355 && X < 405 && Y > 175 && Y < 225) {
+    			check4 = true;
+    			System.out.print("4");
+    		}
+    	}
+    }
+    @FXML
+    private void over(MouseEvent event) {
+    	System.out.println("woeking");
+    	if(check1 == true && check2 == true && check3 == true && check4 == true) {
+    		System.out.print("ready!");
+    		check1 = false;
+			check2 = false;
+			check3 = false;
+			check4 = false;
+    	} else {
+    		check1 = false;
+			check2 = false;
+			check3 = false;
+			check4 = false;
+			System.out.println("again");
     	}
     }
     
-    @FXML
-    private void loadMaze(MouseEvent event) throws IOException{
-    	//load the maze
-    }
 }

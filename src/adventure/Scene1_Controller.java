@@ -1,6 +1,11 @@
 package adventure;
 
 import java.io.IOException;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.animation.Interpolator;
@@ -16,6 +21,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.Group;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -26,6 +32,8 @@ import javafx.scene.Scene;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 import javafx.scene.Node;
+import javafx.scene.image.Image;
+import javafx.scene.layout.Background;
 
 
 public class Scene1_Controller implements Initializable {
@@ -44,6 +52,10 @@ public class Scene1_Controller implements Initializable {
     private AnchorPane anchorRoot5;
     @FXML
     private AnchorPane anchorRoot6;
+    @FXML
+    private ImageView leftArrow;
+    @FXML
+    private ImageView rightArrow;
     @FXML
     private Text text;
     @FXML
@@ -72,7 +84,7 @@ public class Scene1_Controller implements Initializable {
     @FXML
     private void loadNextText(MouseEvent event) throws IOException {
     	if(Y-event.getY()>100 && done == false) {
-    		Node level2 = text.getParent().getParent().getChildrenUnmodifiable().get(3);
+    		Node level2 = text.getParent().getParent().getChildrenUnmodifiable().get(text.getParent().getParent().getChildrenUnmodifiable().size()-1);
         	Text level = (Text) level2;
         	
     		if(level.getText().equals("0")) {
@@ -101,35 +113,35 @@ public class Scene1_Controller implements Initializable {
     			loadStory(root, anchorRoot5, level);
     		}
     		else if(level.getText().equals("5")) {
-    			Parent root = FXMLLoader.load(getClass().getResource("ChooseChar.fxml"));
+    			done = true;
     			parentContainer = (StackPane) text.getParent().getParent();
-    			Scene scene = anchorRoot6.getScene();
-    			Node sp = root.getChildrenUnmodifiable().get(0);
-    			sp.translateYProperty().set(scene.getHeight());
-
     			parentContainer.getChildren().remove(1);
-	        	parentContainer.getChildren().remove(1);
-    			parentContainer.getChildren().add(0, root);
-    			
+    			parentContainer.getChildren().remove(1);
+	        	Parent root1 = FXMLLoader.load(getClass().getResource("ChooseChar1.fxml"));
+	        	StackPane root = (StackPane) root1;
+    			parentContainer.getChildren().addAll(0, root.getChildrenUnmodifiable());
     			
     	        Timeline timeline = new Timeline();
     	        KeyValue kv0 = new KeyValue(anchorRoot6.translateYProperty(), -400, Interpolator.LINEAR);
-    			KeyFrame kf0 = new KeyFrame(Duration.seconds(1), kv0);
-    	        KeyValue kv1 = new KeyValue(sp.translateYProperty(), 0, Interpolator.LINEAR);
-    	        KeyFrame kf1 = new KeyFrame(Duration.seconds(1), kv1);
-    	        timeline.getKeyFrames().addAll(kf0, kf1);
+    			KeyFrame kf0 = new KeyFrame(Duration.seconds(2), kv0);
+    			KeyValue kv2 = new KeyValue(anchorRoot6.opacityProperty(), 1.0, Interpolator.LINEAR);
+    			KeyFrame kf2 = new KeyFrame(Duration.seconds(1), kv2);
+    	        
+    	        timeline.getKeyFrames().addAll(kf0, kf2);
     	        timeline.setOnFinished(t -> {
-    	        	parentContainer.getChildren().remove(1);
     	        	String b = level.getText();
     	        	a = Integer.parseInt(b) + 1;
     	        	b = String.valueOf(a);
     	        	level.setText(b);
-    	        	System.out.println(level.getText());
+    	        	BackgroundImage myBI= new BackgroundImage(
+    	        			new Image("/UnderwaterAdventure/resources/bg2.png"),
+    	        			BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+    	        	parentContainer.setBackground(new Background(myBI));
     	        });
     	        timeline.play();
+    	        parentContainer.getChildren().remove(anchorRoot6);
     	        done = true;
     		}
-    		
     	}
     }
     @FXML
@@ -156,7 +168,6 @@ public class Scene1_Controller implements Initializable {
         	a = Integer.parseInt(b) + 1;
         	b = String.valueOf(a);
         	level.setText(b);
-        	System.out.println(level.getText());
         });
         timeline.play();
         done = true;

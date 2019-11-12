@@ -7,9 +7,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane fx:id="triton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#position" onMouseDragged="#loadNext" prefHeight="550.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adventure.Scene2_Controller2">
+<StackPane fx:id="triton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#position" onDragEntered="#position" onMouseClicked="#loadMaze" onMouseDragEntered="#position" onMouseDragged="#loadNext" onMousePressed="#position" prefHeight="1000.0" prefWidth="1220.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adventure.Scene2_Controller2">
    <children>
-      <ImageView fitHeight="550.0" fitWidth="550.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+      <ImageView fitHeight="970.0" fitWidth="980.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
          <image>
             <Image url="@../../resources/hero2.png" />
          </image>

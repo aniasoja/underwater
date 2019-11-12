@@ -3,3 +3,6 @@
 #text{
 	-fx-font-family: 'Chelsea Market', cursive;
 }
+#parentContainer{
+	-fx-background-image: url("/UnderwaterAdventure/resources/bg2.png");
+}

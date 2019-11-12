@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#position" onDragDone="#over" onDragDropped="#over" onDragExited="#over" onDragOver="#over" onMouseClicked="#position" onMouseDragEntered="#position" onMouseDragExited="#over" onMouseDragOver="#over" onMouseDragReleased="#over" onMouseDragged="#position" onMousePressed="#position" onMouseReleased="#over" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adventure.Scene3_Controller3">
+   <children>
+      <Circle fill="#ff215100" layoutX="293.0" layoutY="179.0" onMouseClicked="#position" radius="100.0" stroke="#7f7f7f" strokeType="INSIDE" strokeWidth="20.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fdfdfd" height="123.0" layoutX="236.0" layoutY="179.0" stroke="TRANSPARENT" strokeType="INSIDE" width="117.0" />
+      <Polygon fill="#797979" layoutX="350.0" layoutY="252.0" points="-22.0, 14.4000244140625, 43.0, -6.4000091552734375, 0.0, -60.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+   </children>
+</AnchorPane>
